@@ -20,24 +20,16 @@ module.exports = RangeAtIndex;
  */
 
 function RangeAtIndex (el, index, offset, range) {
-  if (!range) range = el.ownerDocument.createRange();
+  var doc = el.ownerDocument;
+  if (!range) range = doc.createRange();
 
-  let it = new DomIterator(el.firstChild, el)
-    .select(3 /* text node */)
-    .revisit(false);
+  let iterator = doc.createNodeIterator(el, NodeFilter.SHOW_TEXT);
 
-  let node = it.start;
   let start = {};
   let end = {};
-  let val, len;
+  let node, val, len;
 
-  // ensure node is a textnode
-  //
-  // TODO: figure out a better way to do this
-  // within dom-iterator
-  node = 3 == node.nodeType ? node : it.next();
-
-  while (node) {
+  while (node = iterator.nextNode()) {
     val = node.nodeValue;
     len = val.length;
 
@@ -53,7 +45,6 @@ function RangeAtIndex (el, index, offset, range) {
 
     index -= len;
     offset -= len;
-    node = it.next();
   }
 
   // create the range from the start and end offsets
