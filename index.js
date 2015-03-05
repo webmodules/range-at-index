@@ -47,7 +47,7 @@ function RangeAtIndex (el, index, offset, range) {
     offset -= len;
   }
 
-  // create the range from the start and end offsets
+  // update the range with the start and end offsets
   if (start.node) range.setStart(start.node, start.offset);
   if (end.node) range.setEnd(end.node, end.offset);
 
