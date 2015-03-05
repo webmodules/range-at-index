@@ -18,13 +18,13 @@ install: node_modules
 clean:
 	rm -rf build
 
-distclean: clean
+distclean:
 	rm -rf node_modules
 
 .PHONY: compile, install, clean, distclean
 
 build:
-	mkdir -p build
+	@mkdir -p build
 
 node_modules:
 	npm install
