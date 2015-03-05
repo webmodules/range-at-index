@@ -43,4 +43,24 @@ describe('range-at-index', function () {
     assert.equal(3, range.endOffset);
   });
 
+  it('should modify the passed in Range instance', function () {
+    div = document.createElement('div');
+    div.innerHTML = '<b>hello</b> <i>world</i>';
+    div.setAttribute('contenteditable', 'true');
+    document.body.appendChild(div);
+
+    var range = document.createRange();
+    range.setStart(div, 0);
+    range.setEnd(div, 0);
+    assert(range.collapsed);
+
+    RangeAtIndex(div, 4, 7, range);
+
+    assert.equal('o w', range.toString());
+    assert(div.firstChild.firstChild === range.startContainer);
+    assert.equal(4, range.startOffset);
+    assert(div.lastChild.firstChild === range.endContainer);
+    assert.equal(1, range.endOffset);
+  });
+
 });
