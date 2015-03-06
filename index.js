@@ -1,11 +1,5 @@
 
 /**
- * Module dependencies.
- */
-
-import DomIterator from 'dom-iterator';
-
-/**
  * Module exports.
  */
 
