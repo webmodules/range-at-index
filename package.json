@@ -1,6 +1,6 @@
 {
   "name": "range-at-index",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns a Range instance selecting text within an HTML Element, at start and end offsets",
   "main": "build/index.js",
   "scripts": {
