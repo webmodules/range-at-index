@@ -23,7 +23,7 @@ function RangeAtIndex (el, index, offset, range) {
   var doc = el.ownerDocument;
   if (!range) range = doc.createRange();
 
-  let iterator = doc.createNodeIterator(el, NodeFilter.SHOW_TEXT, null);
+  let iterator = doc.createNodeIterator(el, NodeFilter.SHOW_TEXT, null, false);
 
   let start = {};
   let end = {};
