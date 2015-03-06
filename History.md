@@ -1,4 +1,10 @@
 
+1.0.2 / 2015-03-05
+==================
+
+  * package: less restrictive dep versions
+  * index: remove "dom-iterator" dependency
+
 1.0.1 / 2015-03-05
 ==================
 
