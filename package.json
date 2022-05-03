@@ -26,11 +26,10 @@
     "url": "https://github.com/webmodules/range-at-index/issues"
   },
   "homepage": "https://github.com/webmodules/range-at-index",
-  "dependencies": {
-    "babel-runtime": "4.7.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "4.7.4",
+    "babel-runtime": "4.7.4"
     "zuul": "2"
   }
 }
